@@ -9,8 +9,6 @@ for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
     ln -s $PWD/$file ~/$file
 done
 
-chmod 600 ~/.ssh/id_ed25519
-
 # Check if vim-addon installed, if not, install it automatically
 if hash vim-addon  2>/dev/null; then
     echo "vim-addon (vim-scripts)  installed"
@@ -19,6 +17,4 @@ else
     sudo apt update && sudo apt -y install vim-scripts
 fi
 
-echo "Bash shortcuts and theme installed. Reloading bash...."
-. .bashrc
-echo "Theme installed, and terminal session updated with aliases"
+echo "Installed"
